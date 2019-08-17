@@ -16,7 +16,7 @@
 title: Vinicius Souza
 email: me@viniciusals.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Vinicius Souza`s portifolio.
+  Vinicius Souza`s portifolio. See what Vinicius is working on and what he has done.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
