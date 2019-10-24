@@ -7,13 +7,34 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import { withStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
+
+
+const styles = {
+
+    root: {
+        backgroundColor: '#419EF3',
+        boxShadow: 'none',
+    },
+    list: {
+        width: 250,
+    },
+    paper: {
+        height: "100%",
+        backgroundColor: '#419EF3',
+        color: 'white',
+        fontWeight: 'light',
+
+    }
+}
 
 class Navbar extends React.Component {
 
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.classes = this.props.classes;
         this.state = {
             open: false,
         }
@@ -32,7 +53,7 @@ class Navbar extends React.Component {
 
         return (
             <Fragment>
-                <AppBar position="fixed">
+                <AppBar position="fixed" className={this.classes.root}>
                     <Toolbar>
                         <IconButton
                             color="inherit"
@@ -47,31 +68,36 @@ class Navbar extends React.Component {
                 <Drawer
                     variant="persistent"
                     anchor="left"
-                    open={this.state.open}>
 
-                    <div>
-                        <IconButton onClick={this.handleClick}>
-                            <CloseIcon />
-                        </IconButton>
+                    open={this.state.open}>
+                    <div
+                        role="presentation"
+                        className={this.classes.paper}>
+
+                        <div>
+                            <IconButton onClick={this.handleClick}>
+                                <CloseIcon />
+                            </IconButton>
+                        </div>
+                        <List className={this.classes.list}>
+                            <ListItem button selected>
+                                <Typography variant="button">Home</Typography>
+                            </ListItem>
+                            <ListItem button>
+                                <Typography variant="button">Resume</Typography>
+                            </ListItem>
+                            <ListItem button>
+                                <Typography variant="button">Projects</Typography>
+                            </ListItem>
+                            <ListItem button>
+                                <Typography variant="button">Contact</Typography>
+                            </ListItem>
+                        </List>
                     </div>
-                    <List>
-                        <ListItem button selected>
-                            <ListItemText primary="Home" />
-                        </ListItem>
-                        <ListItem button>
-                            <ListItemText primary="Resume" />
-                        </ListItem>
-                        <ListItem button>
-                            <ListItemText primary="Projects" />
-                        </ListItem>
-                        <ListItem button>
-                            <ListItemText primary="Contact" />
-                        </ListItem>
-                    </List>
                 </Drawer>
             </Fragment>
         );
     }
 }
 
-export default Navbar;
+export default withStyles(styles)(Navbar);
