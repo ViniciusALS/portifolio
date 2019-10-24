@@ -25,7 +25,6 @@ const styles = {
         backgroundColor: '#419EF3',
         color: 'white',
         fontWeight: 'light',
-
     }
 }
 
