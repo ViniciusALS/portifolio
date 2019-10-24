@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import CloseIcon from '@material-ui/icons/Close';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
@@ -51,11 +51,11 @@ class Navbar extends React.Component {
 
                     <div>
                         <IconButton onClick={this.handleClick}>
-                            <ChevronLeftIcon />
+                            <CloseIcon />
                         </IconButton>
                     </div>
                     <List>
-                        <ListItem button>
+                        <ListItem button selected>
                             <ListItemText primary="Home" />
                         </ListItem>
                         <ListItem button>
