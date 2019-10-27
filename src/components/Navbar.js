@@ -14,6 +14,7 @@ class Navbar extends React.Component {
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.classes = this.props.classes;
         this.state = {
             open: false,
@@ -27,6 +28,13 @@ class Navbar extends React.Component {
             open: !this.state.open
         });
     };
+
+    handleChange(event, newValue) {
+
+        this.setState({
+            value: newValue,
+        });
+    }
 
     render(){
 
@@ -56,7 +64,7 @@ class Navbar extends React.Component {
                     </div>
                     <Tabs
                         orientation="vertical"
-                        value={0}
+                        value={this.state.value}
                         onChange={this.handleChange}>
 
                         <Tab label="Home"></Tab>
