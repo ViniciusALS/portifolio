@@ -9,24 +9,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-
-const styles = {
-
-    root: {
-        backgroundColor: '#419EF3',
-        boxShadow: 'none',
-    },
-    list: {
-        width: 250,
-    },
-    paper: {
-        height: "100%",
-        backgroundColor: '#419EF3',
-        color: 'white',
-        fontWeight: 'light',
-    }
-}
-
 class Navbar extends React.Component {
 
     constructor(props){
@@ -52,7 +34,7 @@ class Navbar extends React.Component {
 
         return (
             <Fragment>
-                <AppBar position="fixed" className={this.classes.root}>
+                <AppBar position="fixed">
                     <Toolbar>
                         <IconButton
                             color="inherit"
@@ -67,10 +49,7 @@ class Navbar extends React.Component {
                 <Drawer
                     variant="persistent"
                     anchor="left"
-
-                    open={this.state.open}>
-                    <div
-                        role="presentation"
+                    role="presentation"
                     open={this.state.open}>
                     <div>
                         <IconButton onClick={this.handleClick}>
@@ -94,4 +73,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default withStyles(styles)(Navbar);
+export default Navbar;
