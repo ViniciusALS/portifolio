@@ -21,9 +21,7 @@ class Navbar extends React.Component {
         }
     };
 
-    handleClick(event) {
-
-        event.preventDefault();
+    handleClick() {
 
         this.setState({
             open: !this.state.open
