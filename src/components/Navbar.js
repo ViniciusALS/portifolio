@@ -2,13 +2,12 @@ import React, { Fragment } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import ListItem from '@material-ui/core/ListItem';
 import { withStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 
 const styles = {
@@ -36,6 +35,7 @@ class Navbar extends React.Component {
         this.classes = this.props.classes;
         this.state = {
             open: false,
+            value: 0,
         }
     };
 
@@ -71,28 +71,23 @@ class Navbar extends React.Component {
                     open={this.state.open}>
                     <div
                         role="presentation"
-                        className={this.classes.paper}>
-
-                        <div>
-                            <IconButton onClick={this.handleClick}>
-                                <CloseIcon />
-                            </IconButton>
-                        </div>
-                        <List className={this.classes.list}>
-                            <ListItem button selected>
-                                <Typography variant="button">Home</Typography>
-                            </ListItem>
-                            <ListItem button>
-                                <Typography variant="button">Resume</Typography>
-                            </ListItem>
-                            <ListItem button>
-                                <Typography variant="button">Projects</Typography>
-                            </ListItem>
-                            <ListItem button>
-                                <Typography variant="button">Contact</Typography>
-                            </ListItem>
-                        </List>
+                    open={this.state.open}>
+                    <div>
+                        <IconButton onClick={this.handleClick}>
+                            <CloseIcon />
+                        </IconButton>
                     </div>
+                    <Tabs
+                        orientation="vertical"
+                        value={0}
+                        onChange={this.handleChange}>
+
+                        <Tab label="Home"></Tab>
+                        <Tab label="Resume"></Tab>
+                        <Tab label="Projects"></Tab>
+                        <Tab label="Contact"></Tab>
+
+                    </Tabs>
                 </Drawer>
             </Fragment>
         );
