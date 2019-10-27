@@ -67,10 +67,10 @@ class Navbar extends React.Component {
                         value={this.state.value}
                         onChange={this.handleChange}>
 
-                        <Tab label="Home"></Tab>
-                        <Tab label="Resume"></Tab>
-                        <Tab label="Projects"></Tab>
-                        <Tab label="Contact"></Tab>
+                        <Tab label="Home"/>
+                        <Tab label="Resume"/>
+                        <Tab label="Projects"/>
+                        <Tab label="Contact"/>
 
                     </Tabs>
                 </Drawer>
