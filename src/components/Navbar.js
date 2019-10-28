@@ -70,11 +70,13 @@ class Navbar extends React.Component {
                     open={this.state.open}>
                     <div
                         className={classes.sideBar}>
-                        <div>
-                            <IconButton onClick={this.handleClick}>
+                        <Toolbar>
+                            <IconButton
+                                onClick={this.handleClick}
+                                edge="start">
                                 <StyledCloseIcon/>
                             </IconButton>
-                        </div>
+                        </Toolbar>
                         <StyledTabs
                             orientation="vertical"
                             value={this.state.value}
