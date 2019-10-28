@@ -7,6 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import StyledCloseIcon from '../styledComponents/StyledCloseIcon';
 import { withStyles } from '@material-ui/core/styles';
 import StyledTabs from '../styledComponents/StyledTabs';
+import StyledTab from '../styledComponents/StyledTab';
 
 class Navbar extends React.Component {
 
@@ -66,10 +67,10 @@ class Navbar extends React.Component {
                             value={this.state.value}
                             onChange={this.handleChange}>
 
-                            <Tab label="Home"/>
-                            <Tab label="Resume"/>
-                            <Tab label="Projects"/>
-                            <Tab label="Contact"/>
+                            <StyledTab label="Home"/>
+                            <StyledTab label="Resume"/>
+                            <StyledTab label="Projects"/>
+                            <StyledTab label="Contact"/>
 
                         </StyledTabs>
                     </div>
