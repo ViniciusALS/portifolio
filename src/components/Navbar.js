@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
+import StyledTabs from '../styled components/StyledTabs';
 import Tab from '@material-ui/core/Tab';
 
 class Navbar extends React.Component {
@@ -57,22 +57,23 @@ class Navbar extends React.Component {
                     anchor="left"
                     role="presentation"
                     open={this.state.open}>
-                    <div>
-                        <IconButton onClick={this.handleClick}>
-                            <CloseIcon />
-                        </IconButton>
+                        <div>
+                            <IconButton onClick={this.handleClick}>
+                                <CloseIcon/>
+                            </IconButton>
+                        </div>
+                        <StyledTabs
+                            orientation="vertical"
+                            value={this.state.value}
+                            onChange={this.handleChange}>
+
+                            <Tab label="Home"/>
+                            <Tab label="Resume"/>
+                            <Tab label="Projects"/>
+                            <Tab label="Contact"/>
+
+                        </StyledTabs>
                     </div>
-                    <Tabs
-                        orientation="vertical"
-                        value={this.state.value}
-                        onChange={this.handleChange}>
-
-                        <Tab label="Home"/>
-                        <Tab label="Resume"/>
-                        <Tab label="Projects"/>
-                        <Tab label="Contact"/>
-
-                    </Tabs>
                 </Drawer>
             </Fragment>
         );
