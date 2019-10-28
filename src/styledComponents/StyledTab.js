@@ -7,9 +7,11 @@ const StyledTab = withStyles({
         fontSize: '1.5em',
         padding: '1em',
         fontFamily: 'Montserrat',
+        textTransform: 'capitalize',
     },
     selected: {
-        backgroundColor: 'rgba(255, 255, 255, 0.25)'
+        backgroundColor: 'rgba(255, 255, 255, 0.25)',
+
     }
 })(Tab);
 
