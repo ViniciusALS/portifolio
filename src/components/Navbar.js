@@ -4,7 +4,7 @@ import StyledAppBar from '../styledComponents/StyledAppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
+import StyledCloseIcon from '../styledComponents/StyledCloseIcon';
 import { withStyles } from '@material-ui/core/styles';
 import StyledTabs from '../styledComponents/StyledTabs';
 
@@ -58,7 +58,7 @@ class Navbar extends React.Component {
                     open={this.state.open}>
                         <div>
                             <IconButton onClick={this.handleClick}>
-                                <CloseIcon/>
+                                <StyledCloseIcon/>
                             </IconButton>
                         </div>
                         <StyledTabs
