@@ -9,13 +9,22 @@ import { withStyles } from '@material-ui/core/styles';
 import StyledTabs from '../styledComponents/StyledTabs';
 import StyledTab from '../styledComponents/StyledTab';
 
+const styles = theme => ({
+
+    sideBar: {
+        backgroundColor: '#419EF3',
+        width: '60vw',
+        height: '100%',
+        color: '#F2F2F2',
+    },
+});
+
 class Navbar extends React.Component {
 
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.classes = this.props.classes;
         this.state = {
             open: false,
             value: 0,
@@ -38,6 +47,8 @@ class Navbar extends React.Component {
 
     render(){
 
+        const classes = this.props.classes;
+
         return (
             <Fragment>
                 <StyledAppBar position="fixed">
@@ -57,6 +68,8 @@ class Navbar extends React.Component {
                     anchor="left"
                     role="presentation"
                     open={this.state.open}>
+                    <div
+                        className={classes.sideBar}>
                         <div>
                             <IconButton onClick={this.handleClick}>
                                 <StyledCloseIcon/>
@@ -80,4 +93,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar;
+export default withStyles(styles)(Navbar);
