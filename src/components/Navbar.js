@@ -6,8 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
-import StyledTabs from '../styled components/StyledTabs';
-import Tab from '@material-ui/core/Tab';
+import StyledTabs from '../styledComponents/StyledTabs';
 
 class Navbar extends React.Component {
 
