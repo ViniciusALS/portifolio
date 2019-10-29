@@ -8,6 +8,7 @@ import StyledCloseIcon from '../styledComponents/StyledCloseIcon';
 import { withStyles } from '@material-ui/core/styles';
 import StyledTabs from '../styledComponents/StyledTabs';
 import StyledTab from '../styledComponents/StyledTab';
+import { useHistory } from "react-router-dom";
 
 const styles = theme => ({
 
@@ -27,7 +28,8 @@ class Navbar extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             open: false,
-            value: 0,
+            history: useHistory(),
+            path: 'home',
         }
     };
 
@@ -38,10 +40,14 @@ class Navbar extends React.Component {
         });
     };
 
-    handleChange(event, newValue) {
+    handleChange(event, newPath) {
+
+        // TODO: Re-write project using function components
+
+        // history.push("/macaco");
 
         this.setState({
-            value: newValue,
+            path: newPath,
         });
     }
 
@@ -79,14 +85,13 @@ class Navbar extends React.Component {
                         </Toolbar>
                         <StyledTabs
                             orientation="vertical"
-                            value={this.state.value}
+                            value={this.state.path}
                             onChange={this.handleChange}>
 
-                            <StyledTab label="Home"/>
-                            <StyledTab label="Resume"/>
-                            <StyledTab label="Projects"/>
-                            <StyledTab label="Contact"/>
-
+                            <StyledTab label="home" value='home'/>
+                            <StyledTab label="resume" value='resume'/>
+                            <StyledTab label="projects" value='projects'/>
+                            <StyledTab label="contact" value='contact'/>
                         </StyledTabs>
                     </div>
                 </Drawer>
