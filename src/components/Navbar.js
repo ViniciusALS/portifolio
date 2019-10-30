@@ -1,103 +1,100 @@
 import React, { Fragment } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import StyledAppBar from '../styledComponents/StyledAppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import {default as Tabs} from '../styledComponents/StyledTabs';
+import {default as Tab} from '../styledComponents/StyledTab';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import StyledCloseIcon from '../styledComponents/StyledCloseIcon';
-import { withStyles } from '@material-ui/core/styles';
-import StyledTabs from '../styledComponents/StyledTabs';
-import StyledTab from '../styledComponents/StyledTab';
-import { useHistory } from "react-router-dom";
+import CloseIcon from '@material-ui/icons/Close';
+import { AppBar } from '@material-ui/core';
 
-const styles = theme => ({
 
-    sideBar: {
+const useStyles = makeStyles({
+    top: {
         backgroundColor: '#419EF3',
-        width: '60vw',
+    },
+    list: {
+        width: 250,
         height: '100%',
+        backgroundColor: '#419EF3',
         color: '#F2F2F2',
     },
 });
 
-class Navbar extends React.Component {
+export default function TemporaryDrawer() {
+    const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+    const [value, setValue] = React.useState(0);
 
-    constructor(props){
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.state = {
-            open: false,
-            history: useHistory(),
-            path: 'home',
+    const toggleDrawer = () => event => {
+
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
         }
+
+        setOpen(!open);
     };
 
-    handleClick() {
+    const handleChange = (event, newValue) => {
 
-        this.setState({
-            open: !this.state.open
-        });
+        setValue(newValue);
     };
 
-    handleChange(event, newPath) {
+    const sideList = () => (
+        <div
+            className={classes.list}
+            role="presentation"
+            onClick={toggleDrawer()}
+            onKeyDown={toggleDrawer()}>
 
-        // TODO: Re-write project using function components
+            <Toolbar>
+                <IconButton
+                    color="inherit"
+                    onClick={toggleDrawer()}
+                    aria-label="Open menu"
+                    edge="start">
 
-        // history.push("/macaco");
+                    <CloseIcon/>
+                </IconButton>
+            </Toolbar>
 
-        this.setState({
-            path: newPath,
-        });
-    }
+            <Tabs
+                orientation="vertical"
+                value={value}
+                onChange={handleChange}>
 
-    render(){
+                {['Home', 'Resume', 'Projects', 'Contact'].map((text, index) => (
+                    <Tab
+                        key={text}
+                        label={text}
+                        value={index}/>
+                ))};
+            </Tabs>
+        </div>
+    );
 
-        const classes = this.props.classes;
+    return (
+        <Fragment>
+            <AppBar
+                className={classes.top}>
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="Open menu"
+                        onClick={toggleDrawer()}
+                        edge="start">
 
-        return (
-            <Fragment>
-                <StyledAppBar position="fixed">
-                    <Toolbar>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open menu"
-                            onClick={this.handleClick}
-                            edge="start">
+                        <MenuIcon />
+                    </IconButton>
+                </Toolbar>
+            </AppBar>
+            <Drawer
+                open={open}
+                onClose={toggleDrawer()}>
 
-                            <MenuIcon />
-                        </IconButton>
-                    </Toolbar>
-                </StyledAppBar>
-                <Drawer
-                    variant="persistent"
-                    anchor="left"
-                    role="presentation"
-                    open={this.state.open}>
-                    <div
-                        className={classes.sideBar}>
-                        <Toolbar>
-                            <IconButton
-                                onClick={this.handleClick}
-                                edge="start">
-                                <StyledCloseIcon/>
-                            </IconButton>
-                        </Toolbar>
-                        <StyledTabs
-                            orientation="vertical"
-                            value={this.state.path}
-                            onChange={this.handleChange}>
-
-                            <StyledTab label="home" value='home'/>
-                            <StyledTab label="resume" value='resume'/>
-                            <StyledTab label="projects" value='projects'/>
-                            <StyledTab label="contact" value='contact'/>
-                        </StyledTabs>
-                    </div>
-                </Drawer>
-            </Fragment>
-        );
-    }
+                {sideList()}
+            </Drawer>
+        </Fragment>
+    );
 }
-
-export default withStyles(styles)(Navbar);
