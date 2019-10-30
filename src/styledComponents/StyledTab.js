@@ -11,7 +11,6 @@ const StyledTab = withStyles({
     },
     selected: {
         backgroundColor: 'rgba(255, 255, 255, 0.25)',
-
     }
 })(Tab);
 
