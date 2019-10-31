@@ -4,6 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import {BrowserRouter} from "react-router-dom";
 
 import Navbar from "../components/Navbar";
+import PageBody from "./PageBody";
 
 class App extends Component{
 
@@ -13,6 +14,7 @@ class App extends Component{
         <BrowserRouter>
             <CssBaseline />
             <Navbar/>
+            <PageBody/>
         </BrowserRouter>);
     }
 };
