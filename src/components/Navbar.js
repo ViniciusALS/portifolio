@@ -52,7 +52,7 @@ export default function TemporaryDrawer() {
                 <IconButton
                     color="inherit"
                     onClick={toggleDrawer()}
-                    aria-label="Open menu"
+                    aria-label="Close menu"
                     edge="start">
 
                     <CloseIcon/>
