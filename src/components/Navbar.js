@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function TemporaryDrawer() {
+export default function Navbar() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [value, setValue] = React.useState(0);
