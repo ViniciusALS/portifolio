@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import {BrowserRouter} from "react-router-dom";
@@ -6,17 +6,13 @@ import {BrowserRouter} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import PageBody from "./PageBody";
 
-class App extends Component{
+export default function App (){
 
-    render() {
-
-        return(
+    return(
         <BrowserRouter>
             <CssBaseline />
             <Navbar/>
             <PageBody/>
-        </BrowserRouter>);
-    }
+        </BrowserRouter>
+    );
 };
-
-export default App;
