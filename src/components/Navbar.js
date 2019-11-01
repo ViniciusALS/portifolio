@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { AppBar } from '@material-ui/core';
+import { useHistory } from "react-router-dom";
 
 
 const useStyles = makeStyles({
@@ -25,7 +26,8 @@ const useStyles = makeStyles({
 export default function Navbar() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState("/home");
+    let history = useHistory();
 
     const toggleDrawer = () => event => {
 
@@ -36,8 +38,12 @@ export default function Navbar() {
         setOpen(!open);
     };
 
-    const handleChange = (event, newValue) => {
 
+    function handleChange (event, newValue) {
+
+        const newPath = (newValue === "/home") ?  '/' : newValue;
+
+        history.push(newPath);
         setValue(newValue);
     };
 
@@ -64,11 +70,11 @@ export default function Navbar() {
                 value={value}
                 onChange={handleChange}>
 
-                {['Home', 'Resume', 'Projects', 'Contact'].map((text, index) => (
+                {['home', 'resume', 'projects', 'contact'].map(text => (
                     <Tab
                         key={text}
                         label={text}
-                        value={index}/>
+                        value={"/" + text}/>
                 ))};
             </Tabs>
         </div>
