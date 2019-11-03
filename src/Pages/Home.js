@@ -110,6 +110,7 @@ export default function Home (){
                         'Software Development',
                     ]}/>
 
+                    <img alt="Design section logo" src={design}/>
             </section>
         </Fragment>
     );
