@@ -14,7 +14,7 @@ export default function(props){
                 backgroundColor: '#2A6AA5',
                 borderRadius: '4px',
                 alignSelf: 'center',
-                boxShadow: '2px 2px 4px 2px rgba(0,0,0,.2)',
+                boxShadow: '1px 1px 4px 2px rgba(0,0,0,.2)',
                 margin: '1em 0 0 0',
             }}>
 
