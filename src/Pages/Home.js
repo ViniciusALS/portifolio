@@ -122,6 +122,10 @@ export default function Home (){
                         boxShadow: '4px 4px 4px 2px rgba(0,0,0,.25)',
                     }}>
                     <img alt="Design section logo" src={design}/>
+                    <Typography variant="h3">Design</Typography>
+                    <Typography variant="body1">
+                        I like UX / UI and I usually use tools like:
+                    </Typography>
             </section>
         </Fragment>
     );
