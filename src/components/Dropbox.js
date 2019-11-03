@@ -16,7 +16,6 @@ const BootstrapInput = withStyles(theme => ({
         padding: '12px 0',
         '&:focus': {
             borderRadius: 4,
-            boxShadow: '0 0 0 0.2rem rgba(255, 255, 255, .25)',
         },
     },
 }))(InputBase);
