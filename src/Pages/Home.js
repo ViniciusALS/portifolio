@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Tag from '../components/Tag'
 
 import portrait from '../images/portrait.png';
+import design from '../images/design.svg';
 
 const useStyles = makeStyles({
     section: {
