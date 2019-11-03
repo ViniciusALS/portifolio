@@ -3,6 +3,7 @@ import Dropbox from "../components/Dropbox";
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import Tag from '../components/Tag'
 
 import portrait from '../images/portrait.png';
 
