@@ -4,15 +4,20 @@ import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tag from '../components/Tag'
+import Divider from '@material-ui/core/Divider';
+import { withStyles } from '@material-ui/styles';
 
 import portrait from '../images/portrait.png';
 import design from '../images/design.svg';
+import frontEnd from '../images/frontEnd.svg';
+import backEnd from '../images/backEnd.svg';
+import tools from '../images/tools.svg';
 
 const useStyles = makeStyles({
     section: {
         paddingTop: '6.1rem',
         padding: '0 2rem 0 2rem',
-        // textJustify: 'auto',
+        backgroundColor: '#E5E5E5',
         display: 'flex',
         flexDirection: 'column',
         height: '100vh',
@@ -39,7 +44,13 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Home (){
+const CardDivider = withStyles(theme=>({
+    root: {
+        margin: '2rem 0',
+    }
+}))(Divider);
+
+export default function(){
 
     const [state, setState] = React.useState({
         skillShown: 0,
@@ -91,15 +102,14 @@ export default function Home (){
             <section
                 className={classes.section}
                 style={{
-                    backgroundColor: "#419EF3"
-                }}>
+                    backgroundColor: "#419EF3",
+                    height: 'auto'}}>
 
                 <Typography
                     variant="h2"
                     className={classes.h2}
                     style={{
-                        color: '#F2F2F2',
-                    }}>
+                        color: '#F2F2F2'}}>
 
                     My Skills
                 </Typography>
@@ -110,8 +120,7 @@ export default function Home (){
                     options={[
                         'Electronics Engineering',
                         'Web Development',
-                        'Software Development',
-                    ]}/>
+                        'Software Development']}/>
 
                 <Paper
                     style={{
@@ -119,20 +128,60 @@ export default function Home (){
                         flexDirection: 'column',
                         padding: '2em',
                         backgroundColor: '#EBEBEB',
-                        boxShadow: '4px 4px 4px 2px rgba(0,0,0,.25)',
-                    }}>
+                        boxShadow: '2px 2px 4px 2px rgba(0,0,0,.2)'}}>
+
                     <img alt="Design section logo" src={design}/>
                     <Typography variant="h3">Design</Typography>
                     <Typography variant="body1">
-                        I like UX / UI and I usually use tools like:
+                        Things I usually use:
                     </Typography>
                     <Tag>Figma</Tag>
                     <Tag>Adobe XD</Tag>
                     <Tag>Photoshop</Tag>
                     <Tag>Illustrator</Tag>
                     <Tag>Gimp</Tag>
-                </Paper>
 
+                    <CardDivider/>
+
+                    <img alt="Front End section logo" src={frontEnd}/>
+                    <Typography variant="h3">Front End</Typography>
+                    <Typography variant="body1">
+                        Things I usually use:
+                    </Typography>
+                    <Tag>HTML</Tag>
+                    <Tag>CSS</Tag>
+                    <Tag>JavaScript</Tag>
+                    <Tag>Sass</Tag>
+                    <Tag>React.js</Tag>
+                    <Tag>Material-ui</Tag>
+                    <Tag>jQuery</Tag>
+                    <Tag>Bootstrap</Tag>
+
+                    <CardDivider/>
+
+                    <img alt="Back End section logo" src={backEnd}/>
+                    <Typography variant="h3">Back End</Typography>
+                    <Typography variant="body1">
+                        Things I usually use:
+                    </Typography>
+                    <Tag>Node.js</Tag>
+                    <Tag>PHP</Tag>
+                    <Tag>SQL</Tag>
+
+                    <CardDivider/>
+
+                    <img alt="Tools section logo" src={tools}/>
+                    <Typography variant="h3">Tools</Typography>
+                    <Typography variant="body1">
+                        Things I usually use:
+                    </Typography>
+                    <Tag>GitHub</Tag>
+                    <Tag>GitLab</Tag>
+                    <Tag>Terminal</Tag>
+                    <Tag>VS Code</Tag>
+                    <Tag>Slack</Tag>
+                    <Tag>Kanban</Tag>
+                </Paper>
             </section>
         </Fragment>
     );
