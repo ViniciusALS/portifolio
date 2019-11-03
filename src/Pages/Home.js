@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import Dropbox from "../components/Dropbox";
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 
 import portrait from '../images/portrait.png';
 
@@ -110,6 +111,14 @@ export default function Home (){
                         'Software Development',
                     ]}/>
 
+                <Paper
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        padding: '2em',
+                        backgroundColor: '#EBEBEB',
+                        boxShadow: '4px 4px 4px 2px rgba(0,0,0,.25)',
+                    }}>
                     <img alt="Design section logo" src={design}/>
             </section>
         </Fragment>
