@@ -126,6 +126,13 @@ export default function Home (){
                     <Typography variant="body1">
                         I like UX / UI and I usually use tools like:
                     </Typography>
+                    <Tag>Figma</Tag>
+                    <Tag>Adobe XD</Tag>
+                    <Tag>Photoshop</Tag>
+                    <Tag>Illustrator</Tag>
+                    <Tag>Gimp</Tag>
+                </Paper>
+
             </section>
         </Fragment>
     );
