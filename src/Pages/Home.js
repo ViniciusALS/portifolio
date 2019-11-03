@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
+import Dropbox from "../components/Dropbox";
 import { Typography } from '@material-ui/core';
-
 import { makeStyles } from '@material-ui/core/styles';
 
 import portrait from '../images/portrait.png';
@@ -17,6 +17,11 @@ const useStyles = makeStyles({
     title: {
         fontWeight: "bold",
         fontSize: '2.2rem',
+        paddingBottom: '2rem',
+    },
+    h2: {
+        fontWeight: "bold",
+        fontSize: '2rem',
         paddingBottom: '2rem',
     },
     body: {
@@ -69,6 +74,30 @@ export default function Home (){
                 </Typography>
 
                 <img className={classes.image} alt="Vinicius` portrait" src={portrait}/>
+            </section>
+            <section
+                className={classes.section}
+                style={{
+                    backgroundColor: "#419EF3"
+                }}>
+
+                <Typography
+                    variant="h2"
+                    className={classes.h2}
+                    style={{
+                        color: '#F2F2F2',
+                    }}>
+
+                    My Skills
+                </Typography>
+
+                <Dropbox
+                    options={[
+                        'Electronics Engineering',
+                        'Web Development',
+                        'Software Development',
+                    ]}/>
+
             </section>
         </Fragment>
     );
