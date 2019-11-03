@@ -10,6 +10,7 @@ const BootstrapInput = withStyles(theme => ({
         backgroundColor: '#2A6AA5',
         color: '#F2F2F2',
         textAlign: 'center',
+        margin: '0 0 1.5em 0',
     },
     input: {
         padding: '12px 0',
