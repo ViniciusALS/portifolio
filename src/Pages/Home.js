@@ -38,6 +38,16 @@ const useStyles = makeStyles({
 
 export default function Home (){
 
+    const [state, setState] = React.useState({
+        skillShown: 0,
+    });
+
+    const handleDropboxChange = (event) => {
+        setState({
+            skillShown: event.target.value,
+        });
+    }
+
     const classes = useStyles();
 
     return(
@@ -92,6 +102,8 @@ export default function Home (){
                 </Typography>
 
                 <Dropbox
+                    value={state.skillShown}
+                    onChange={handleDropboxChange}
                     options={[
                         'Electronics Engineering',
                         'Web Development',

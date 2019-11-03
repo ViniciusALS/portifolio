@@ -34,16 +34,16 @@ const BootstrapSelect = withStyles(theme => ({
 }))(Select);
 
 export default function(props) {
-    const [skill, setSkill] = React.useState(0);
+    // const [skill, setSkill] = React.useState(0);
 
-    const handleChange = event => {
-        setSkill(event.target.value);
-    };
+    // const handleChange = event => {
+    //     setSkill(event.target.value);
+    // };
 
     return (
         <BootstrapSelect
-            value={skill}
-            onChange={handleChange}
+            value={props.value}
+            onChange={props.onChange}
             input={<BootstrapInput />}>
 
             {props.options.map((text, index)=>(
